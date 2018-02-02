@@ -41,6 +41,7 @@ Array.from(books).forEach(function(book) {
 /*3rd Topic
 -Changing Text and HTML Content*/
 
+/*
 var books = document.querySelectorAll('#book-list li .name')
 
 Array.from(books).forEach(function(book) {
@@ -62,3 +63,35 @@ Array.from(button).forEach(function(but) {
 var bookTitle = document.querySelector('#book-list h2');
 
     bookTitle.innerHTML = '<button>Click Me!</button>';
+*/
+
+
+/*4th Topic Node
+-Checking Node Type and Name
+-Cloning Nodes*/
+
+const wrapper = document.querySelector('#wrapper');
+
+console.log('#wrapper node type is: ', wrapper.nodeType);
+console.log('#wrapper node name is: ', wrapper.nodeName);
+console.log('#wrapper has child node: ',wrapper.hasChildNodes());
+
+const clonedWrapper = wrapper.cloneNode(true);
+
+console.log(clonedWrapper);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
