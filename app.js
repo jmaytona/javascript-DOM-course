@@ -14,7 +14,11 @@ Array.from(titles).forEach(function(item){
                console.log(item);
                })*/
 
-const wrap = document.querySelector('#wrapper');
+
+/*2nd Topic 
+-Query Selector*/
+
+/*const wrap = document.querySelector('#wrapper');
 
 console.log(wrap);
 
@@ -27,9 +31,34 @@ var books = document.querySelector('#book-list li .name');
 console.log(books);
 
 books = document.querySelectorAll('#book-list li .name');
-
 console.log(books);
 
 Array.from(books).forEach(function(book) {
                           console.log(book);
-                          })
+                          })*/
+
+
+/*3rd Topic
+-Changing Text and HTML Content*/
+
+var books = document.querySelectorAll('#book-list li .name')
+
+Array.from(books).forEach(function(book) {
+    book.textContent += ' (book title)';
+})
+
+var cTitle = document.getElementsByClassName('title');
+
+Array.from(cTitle).forEach(function(title) {
+    title.textContent = 'Changed Title!';
+})
+
+var button = document.getElementsByTagName('button');
+
+Array.from(button).forEach(function(but) {
+    but.innerHTML += ' button';
+})
+
+var bookTitle = document.querySelector('#book-list h2');
+
+    bookTitle.innerHTML = '<button>Click Me!</button>';
