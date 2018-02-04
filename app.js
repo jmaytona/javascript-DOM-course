@@ -84,24 +84,42 @@ console.log(clonedWrapper);*/
 /*5th Topic Traversing the DOM*/
 
 /*To Parent*/
-const booklist = document.querySelector('#book-list');
+/*const booklist = document.querySelector('#book-list');
 
 console.log('the parent node of #book-list is: ', booklist.parentNode);
 console.log ('the parent elemet of #book-list is: ', booklist.parentElement);
-console.log('the parent of parent node of #book-list is: ', booklist.parentNode.parentNode);
+console.log('the parent of parent node of #book-list is: ', booklist.parentNode.parentNode);*/
 
 /*To Child*/
-console.log(booklist.childNodes);
-console.log(booklist.children);
+/*console.log(booklist.childNodes);
+console.log(booklist.children);*/
 
 /*To Siblings*/
-console.log('This is the next sibling: ', booklist.nextSibling);
+
+/*console.log('This is the next sibling: ', booklist.nextSibling);
 console.log('This is the next Element sibling: ', booklist.nextElementSibling);
 
 console.log('This is the previous sibling: ', booklist.previousSibling);
 console.log('This is the previous Element sibling: ', booklist.previousElementSibling);
 
-booklist.previousElementSibling.querySelector('p').innerHTML += '<br>There you go!';
+booklist.previousElementSibling.querySelector('p').innerHTML += '<br>There you go!';*/
+
+/*6th topic Event*/
+
+var event = document.querySelectorAll('#book-list .delete')
+
+Array.from(event).forEach(function(e){
+    e.addEventListener('click', function(e){
+        
+        const li = e.target.parentElement;
+        li.parentNode.removeChild(li)
+    });
+        
+});
+
+
+
+
 
 
 
