@@ -104,9 +104,10 @@ console.log('This is the previous Element sibling: ', booklist.previousElementSi
 
 booklist.previousElementSibling.querySelector('p').innerHTML += '<br>There you go!';*/
 
+
 /*6th topic Event*/
 
-var event = document.querySelectorAll('#book-list .delete')
+/*var event = document.querySelectorAll('#book-list .delete')
 
 Array.from(event).forEach(function(e){
     e.addEventListener('click', function(e){
@@ -115,7 +116,21 @@ Array.from(event).forEach(function(e){
         li.parentNode.removeChild(li)
     });
         
-});
+});*/
+
+
+/*7th Event Bubbling*/
+
+const list = document.querySelector('#book-list ul');
+
+list.addEventListener('click', function(e){
+                      if(e.target.className == 'delete') {
+                          const li = e.target.parentElement;
+                          li.parentElement.removeChild(li);
+                      }
+                      })
+
+
 
 
 
