@@ -121,51 +121,44 @@ Array.from(event).forEach(function(e){
 
 /*7th Event Bubbling*/
 
+//Delete
+
 const list = document.querySelector('#book-list ul');
 
-list.addEventListener('click', function(e){
-                      if(e.target.className == 'delete') {
-                          const li = e.target.parentElement;
-                          li.parentElement.removeChild(li);
-                      }
-                      })
+list.addEventListener('click', function (e) {
+    if (e.target.className == 'delete') {
+        const li = e.target.parentElement;
+        li.parentElement.removeChild(li);
+    }
+})
 
+/*8th Forms*/
 
+//Add Booklist
 
+const addForm = document.forms['add-book'];
 
+addForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const value = addForm.querySelector('input[type="text"]').value;
+    console.log(value);
 
+    //Create Element
 
+    const li = document.createElement('li');
+    const bookName = document.createElement('span');
+    const deletebtn = document.createElement('span');
 
+    //Add Content
+    deletebtn.textContent = 'delete';
+    bookName.textContent = value;
+    
+    //Add Class Name(for Styles)
+    deletebtn.classList.add('delete');
+    bookName.classList.add('name');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    //Append DOM
+    li.appendChild(bookName);
+    li.appendChild(deletebtn);
+    list.appendChild(li);
+});
