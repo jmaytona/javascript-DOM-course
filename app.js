@@ -141,7 +141,6 @@ const addForm = document.forms['add-book'];
 addForm.addEventListener('submit', function (e) {
     e.preventDefault();
     const value = addForm.querySelector('input[type="text"]').value;
-    console.log(value);
 
     //Create Element
 
@@ -152,7 +151,7 @@ addForm.addEventListener('submit', function (e) {
     //Add Content
     deletebtn.textContent = 'delete';
     bookName.textContent = value;
-    
+
     //Add Class Name(for Styles)
     deletebtn.classList.add('delete');
     bookName.classList.add('name');
@@ -161,4 +160,16 @@ addForm.addEventListener('submit', function (e) {
     li.appendChild(bookName);
     li.appendChild(deletebtn);
     list.appendChild(li);
+
+});
+
+//Checkbox
+const hideBox = document.querySelector('#hide');
+hideBox.addEventListener('change', function (e) {
+    if (hideBox.checked) {
+        list.style.display = "none";
+    } else {
+        list.style.display = "initial";
+    }
+
 });
